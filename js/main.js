@@ -6,7 +6,7 @@ const app = new Vue({
         const result = await fetch(path);
         return await result.json();
       } catch (err) {
-        throw new Error(err);
+        return `ERROR ${err}`;
       }
     },
   },
