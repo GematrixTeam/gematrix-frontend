@@ -1,6 +1,8 @@
 # gematrix-frontend
 Gematrix project frontend repository
 
+[![Build Status](https://travis-ci.org/GematrixTeam/gematrix-frontend.svg?branch=master)](https://travis-ci.org/GematrixTeam/gematrix-frontend)
+
 ## Project setup
 ```
 npm install
