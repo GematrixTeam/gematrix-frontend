@@ -1,0 +1,16 @@
+language: node_js
+
+jobs:
+  include:
+  - stage: Lint
+    node_js: '10'
+    script: npm run lint
+  - stage: Build
+    node_js: '10'
+    script: npm run build
+
+stages:
+- Lint
+- Build
+
+
