@@ -4,8 +4,7 @@
 </template>
 
 <script>
-// сюда импортируем компоненты
-// ///////////////////////////
+
 export default {
   name: 'app',
   components: {
@@ -15,8 +14,4 @@ export default {
 </script>
 
 <style>
-      /* например... */
-#app {
-  background-color: aliceblue;
-}
 </style>
