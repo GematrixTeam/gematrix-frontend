@@ -26,21 +26,30 @@ export default {
   name: 'app',
   data() {
     return {
-      datasets: [
-        {
-          text: 'dskl',
-        },
-        {
-          text: '',
-        },
-        {
-          text: 'dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 333 dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 333',
-        },
-      ],
+      datasets: [],
     };
+  },
+  mounted() {
+    this.getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5').then((result) => {
+      this.fillTheArrayWith(result);
+    });
   },
   components: {
     TheSearch, DataList,
+  },
+  methods: {
+    async getDataFrom(path) {
+      try {
+        const result = await fetch(path);
+        return await result.json();
+      } catch (err) {
+        return `ERROR ${err}`;
+      }
+    },
+
+    fillTheArrayWith(data) {
+      this.datasets = [...data];
+    },
   },
 };
 </script>
