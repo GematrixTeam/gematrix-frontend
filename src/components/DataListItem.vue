@@ -1,21 +1,24 @@
 <template>
-  <div class="data-list-item">
-    <b-card no-body class="overflow-hidden" style="max-width: 1144px;">
-      <b-row no-gutters>
-        <b-col md="6">
-          <b-card-body title="Example dataset name">
-            <b-card-text>
-              {{ dataset.text }}
-            </b-card-text>
-          </b-card-body>
-        </b-col>
-        <b-col md="6">
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-          <b-card-img src="https://via.placeholder.com/700x160" class="rounded-0"></b-card-img>
-        </b-col>
-      </b-row>
-  </b-card>
-  </div>
+  <b-container class="data-list-item">
+    <b-row>
+      <b-col class="data-list-item__heading">
+        <h2>Example dataset name</h2>
+      </b-col>
+      <b-col>
+        <div class="data-list-item__button">
+          <b-button class="data-list-item__button_size data-list-item__button_color">Visualize</b-button>
+        </div>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col class="data-list-item__text-content">{{ dataset.text }}</b-col>
+      <b-col>
+        <div class="data-list-item__img">
+          <b-img right src="https://picsum.photos/700/160/?grayscale" fluid alt="Responsive image"></b-img>
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -25,3 +28,7 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+  @import '../assets/style/sass/DataListItem.sass'
+</style>

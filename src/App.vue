@@ -28,13 +28,13 @@ export default {
     return {
       datasets: [
         {
-          text: 'dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 111',
+          text: 'dskl',
         },
         {
-          text: 'dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 222',
+          text: '',
         },
         {
-          text: 'dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 333',
+          text: 'dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 333 dskljfld ksdlfjskldfj  sdklfjsldkfjls sdfkljsdlkfjsldkfjldkjsdklfj dskfjdkfjdl 333',
         },
       ],
     };
