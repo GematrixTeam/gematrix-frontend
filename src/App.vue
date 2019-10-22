@@ -13,8 +13,6 @@
       </div>
     </main>
 
-
-
   </div>
 </template>
 
@@ -46,10 +44,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  h1 {
-    color: red;
-    text-align: center;
-  }
+<style lang="sass">
+/* @import './assets/style/style.sass' */
+
+h1
+  color: #0000ff
+  text-align: center
 
 </style>
