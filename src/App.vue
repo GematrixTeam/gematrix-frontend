@@ -10,7 +10,10 @@
         <TheSearch />
         <DataList :datasets="datasets" />
       </div>
-      <div class="main__right-part"></div>
+      <div class="main__right-part">
+        <button class="main__add-data-btn">Add dataset</button>
+        <aside class="main__aside"></aside>
+      </div>
     </div>
   </div>
 </template>

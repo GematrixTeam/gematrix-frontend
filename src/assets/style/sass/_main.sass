@@ -1,9 +1,22 @@
 .main
-  @extend .container
+  @extend .wrap-container
   display: flex
   justify-content: space-between
-  @__left-part
+  &__left-part
     width: 1180px
-  @__right-part
+  &__right-part
     width: 360px
     padding-left: 60px
+  &__add-data-btn
+    padding: 10px
+    width: 300px
+    height: 100px
+    background-color: white
+    font-size: xxx-large
+    border: 1px solid #C4C4C4
+  &__aside
+    width: 300px
+    height: 760px
+    background-color: #C4C4C4
+    padding: 10px
+    margin-top: 10px
