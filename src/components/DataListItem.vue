@@ -2,16 +2,19 @@
   <b-container class="data-list-item">
     <b-row>
       <b-col class="data-list-item__heading">
-        <h2>Example dataset name</h2>
+        <h2>{{ dataset.title }}</h2>
       </b-col>
       <b-col>
         <div class="data-list-item__button">
-          <b-button class="data-list-item__button_size data-list-item__button_color">Visualize</b-button>
+          <b-button class="data-list-item__button_size
+          data-list-item__button_color">
+            Visualize
+          </b-button>
         </div>
       </b-col>
     </b-row>
     <b-row>
-      <b-col class="data-list-item__text-content">{{ dataset.text }}</b-col>
+      <b-col class="data-list-item__text-content">{{ dataset.body }}</b-col>
       <b-col>
         <div class="data-list-item__img">
           <b-img right src="https://picsum.photos/700/160/?grayscale" fluid alt="Responsive image"></b-img>
