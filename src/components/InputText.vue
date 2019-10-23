@@ -5,8 +5,7 @@
         <label for="title">{{titleField}}:</label>
       </b-col>
       <b-col sm="11">
-        <b-form-input id="title" v-model="textTitle" placeholder="Enter dataset title"></b-form-input>
-        <!--    <div class="mt-2">Value: {{ textTitle }}</div> -->
+        <b-form-input id="title" v-model="textTitle"></b-form-input>
       </b-col>
     </b-row>
   </div>
