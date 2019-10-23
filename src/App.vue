@@ -13,6 +13,14 @@
       </div>
     </main>
 
+<div>
+  <b-button v-b-modal.modal-uploadPage>Add dataset</b-button>
+
+  <b-modal id="modal-uploadPage" size="lg" centered title="Add new dataset">
+    <p class="my-4">Vertically centered modal!</p>
+  </b-modal>
+</div>
+
   </div>
 </template>
 
@@ -45,5 +53,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import '/assets/style/style.sass'
+@import 'assets/style/sass/style.sass'
 </style>
