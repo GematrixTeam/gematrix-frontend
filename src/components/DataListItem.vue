@@ -1,7 +1,7 @@
 <template>
   <b-container class="data-list-item">
     <b-row>
-      <b-col class="data-list-item__heading">
+      <b-col cols="9" class="data-list-item__heading">
         <h2>{{ dataset.title }}</h2>
       </b-col>
       <b-col>
