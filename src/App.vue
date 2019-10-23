@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <h1>Vue.js SPA</h1>
+      <h1>GEMATRIX</h1>
     </header>
 
     <b-breadcrumb :items="items"></b-breadcrumb>
@@ -45,10 +45,5 @@ export default {
 </script>
 
 <style lang="sass">
-/* @import './assets/style/style.sass' */
-
-h1
-  color: #0000ff
-  text-align: center
-
+@import '/assets/style/style.sass'
 </style>
