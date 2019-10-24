@@ -42,6 +42,12 @@ export default {
     TheSearch, DataList, TheLoader,
   },
   methods: {
+    /**
+    * Method sends a get- request.
+    * @param {string} path - the path to...
+    * @return {array} - array of objects.
+    * @return {string} - error messege if catch some error.
+    */
     async getDataFrom(path) {
       try {
         const result = await fetch(path);
@@ -51,6 +57,10 @@ export default {
       }
     },
 
+    /**
+    * Method fills the array with data.
+    * @param {array} data
+    */
     fillTheArrayWith(data) {
       this.datasets = [...data];
     },
