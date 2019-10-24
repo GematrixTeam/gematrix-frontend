@@ -1,16 +1,30 @@
 language: node_js
+node_js: 10
 
 jobs:
   include:
   - stage: Lint
-    node_js: '10'
     script: npm run lint
   - stage: Build
-    node_js: '10'
     script: npm run build
-
+  - stage: Dockerize and publish
+    if: branch = master AND type = push AND fork = false
+    script: npm run build && npm run docker_build && npm run docker_tag && npm run docker_login && npm run docker_push
+  - stage: Deploy
+    if: branch = master AND type = push AND fork = false
+    script:
+    - export DOCKER_TAG=$(git rev-parse HEAD)
+    - echo $DOCKER_TAG
+    - ssh -o "StrictHostKeyChecking no" -t root@gematrix-dev.hntr.info "/snap/bin/docker
+      service update --image=gematrix/gematrix-frontend:${DOCKER_TAG} gematrix-frontend"
 stages:
 - Lint
 - Build
-
-
+- Dockerize and publish
+- Deploy
+before_install:
+- openssl aes-256-cbc -K $encrypted_8804dc67dd51_key -iv $encrypted_8804dc67dd51_iv
+  -in deploy_key.enc -out ./deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 ./deploy_key
+- ssh-add ./deploy_key
