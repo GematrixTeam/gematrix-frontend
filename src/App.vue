@@ -64,6 +64,54 @@ export default {
     fillTheArrayWith(data) {
       this.datasets = [...data];
     },
+
+    /**
+    * Method determines whether the passed argument is an array.
+    * @param {*} data
+    * @return {boolean} - true - if is array, otherwise - false.
+    */
+    isArray(data) {
+      return Array.isArray(data);
+    },
+
+    /**
+    * Method checks if there are elements in the array.
+    * @param {array} arr
+    * @return {boolean} - true - array is not empty, otherwise - false.
+    */
+    isArrayNotEmpty(arr) {
+      if (!arr.length) {
+        return false;
+      }
+      return true;
+    },
+
+    /**
+    * Method checks if array elements are objects.
+    * @param {array} arr
+    * @return {boolean} - true - elements are objects, otherwise - false.
+    */
+    ifArrayElementsAreObjects(arr) {
+      arr.every((elem) => {
+        if (elem !== Object(elem)) {
+          return false;
+        }
+        return true;
+      });
+    },
+
+    /**
+    * Method checks if there are values in the object.
+    * @param {object} obj
+    * @return {boolean} - true - there are values, otherwise - false.
+    */
+    isObjectNotEmpty(obj) {
+      const check = Object.values(obj);
+      if (!check.length) {
+        return false;
+      }
+      return true;
+    },
   },
 };
 </script>
