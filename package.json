@@ -5,7 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "docker_build": "docker build -t gematrix/gematrix-frontend:$(git rev-parse HEAD) .",
+    "docker_tag": "docker tag gematrix/gematrix-frontend:$(git rev-parse HEAD) gematrix/gematrix-frontend:latest",
+    "docker_push": "docker push gematrix/gematrix-frontend:$(git rev-parse HEAD)",
+    "docker_login": "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
