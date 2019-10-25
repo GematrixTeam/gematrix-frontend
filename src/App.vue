@@ -12,7 +12,7 @@
         <DataList v-else :datasets="datasets" />
       </div>
       <div class="main__right-part">
-        <button class="main__add-data-btn">Add dataset</button>
+        <ButtonAddDataset  class="main__add-data-btn" />
         <aside class="main__aside"></aside>
       </div>
     </div>
@@ -23,6 +23,7 @@
 import TheSearch from '@/components/TheSearch.vue';
 import DataList from '@/components/DataList.vue';
 import TheLoader from '@/components/TheLoader.vue';
+import ButtonAddDataset from '@/components/ButtonAddDataset.vue';
 
 export default {
   name: 'app',
@@ -39,7 +40,7 @@ export default {
     });
   },
   components: {
-    TheSearch, DataList, TheLoader,
+    TheSearch, DataList, TheLoader, ButtonAddDataset,
   },
   methods: {
     /**
@@ -56,7 +57,6 @@ export default {
         throw new Error(err);
       }
     },
-
     /**
     * Method fills the array with data.
     * @param {array} data
