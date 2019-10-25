@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-row class="my-1">
+    <b-row class="my-1 row-vertical-center">
       <b-col sm="1">
         <label for="title">{{titleField}}:</label>
       </b-col>
@@ -18,11 +18,13 @@ export default {
       textTitle: '',
     };
   },
-  props: ['titleField'],
+  props: {
+    titleField: String
+  },
 };
 </script>
 
 <style lang="sass" scoped>
-.my-1
+.row-vertical-center
   line-height: 38px
 </style>

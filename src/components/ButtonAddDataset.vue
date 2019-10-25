@@ -22,7 +22,3 @@ export default {
   },
 };
 </script>
-
-<style lang="sass" scoped>
-@import '../assets/style/sass/style.sass'
-</style>

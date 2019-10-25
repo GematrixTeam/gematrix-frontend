@@ -3,12 +3,11 @@
         <label for="title">{{titleField}}:</label>
         <b-form-textarea
       id="textarea"
-      v-model="text"
+      v-model="textTitle"
       placeholder="CSV data here"
       rows="10"
       max-rows="15"
     ></b-form-textarea>
-    <pre class="mt-3 mb-0">{{ text }}</pre>
   </div>
 </template>
 
@@ -16,9 +15,11 @@
 export default {
   data() {
     return {
-      text: '',
+      textTitle: '',
     };
   },
-  props: ['titleField'],
+  props: {
+    titleField: String
+  },
 };
 </script>
