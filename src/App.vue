@@ -53,7 +53,7 @@ export default {
         const result = await fetch(path);
         return await result.json();
       } catch (err) {
-        return `ERROR ${err}`;
+        throw new Error(err);
       }
     },
 
