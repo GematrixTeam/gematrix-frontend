@@ -33,8 +33,8 @@ export default {
     };
   },
   mounted() {
-    this.getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5').then((result) => {
-      this.fillTheArrayWith(result);
+    this.$_getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5').then((result) => {
+      this.$_fillTheArrayWith(result);
       this.loading = false;
     });
   },
@@ -48,7 +48,7 @@ export default {
     * @return {array} - array of objects.
     * @return {string} - error messege if catch some error.
     */
-    async getDataFrom(path) {
+    async $_getDataFrom(path) {
       try {
         const result = await fetch(path);
         return await result.json();
@@ -61,7 +61,7 @@ export default {
     * Method fills the array with data.
     * @param {array} data
     */
-    fillTheArrayWith(data) {
+    $_fillTheArrayWith(data) {
       this.datasets = [...data];
     },
   },
