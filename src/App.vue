@@ -46,7 +46,7 @@ export default {
     * Method sends a get- request.
     * @param {string} path - the path to...
     * @return {array} - array of objects.
-    * @return {string} - error messege if catch some error.
+    * @return {object} - error messege if catch some error.
     */
     async $_getDataFrom(path) {
       try {
