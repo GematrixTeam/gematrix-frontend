@@ -1,10 +1,10 @@
 <template>
-  <section class="data-list">
-    <DataListItem
-    v-for="dataset of datasets"
-    :dataset="dataset"
-    :key="dataset.id"/>
-  </section>
+  <div class="data-list rounded px-2 pt-2">
+      <DataListItem
+      v-for="dataset of datasets"
+      :dataset="dataset"
+      :key="dataset.id"/>
+  </div>
 </template>
 
 <script>
@@ -21,5 +21,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../assets/style/sass/_DataList.sass'
+  .data-list
+    border: 0.05rem solid #C4C4C4
 </style>

@@ -1,9 +1,6 @@
 <template>
-  <div class="search-area">
-    <div class="search-area__input">
-      <span class="search-area__input-name">Search</span>
-      <b-form-input v-model="inputText" class="search-area__input-field"></b-form-input>
-    </div>
+  <div class="search-area p-2 rounded">
+    <b-form-input  v-model="inputText" placeholder="Search..."></b-form-input>
   </div>
 </template>
 
@@ -18,5 +15,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../assets/style/sass/_TheSearch.sass'
+.search-area
+  background-color: #C4C4C4
 </style>

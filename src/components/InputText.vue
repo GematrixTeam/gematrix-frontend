@@ -19,7 +19,7 @@ export default {
     };
   },
   props: {
-    titleField: String
+    titleField: String,
   },
 };
 </script>

@@ -1,27 +1,25 @@
 <template>
-  <b-container class="data-list-item">
-    <b-row>
-      <b-col cols="9" class="data-list-item__heading">
-        <h2>{{ dataset.title }}</h2>
+  <section class="data-list-item container rounded mb-2 p-2">
+    <b-row class="no-gutters align-items-center justify-content-between">
+      <b-col class="data-list-item__title p-1" sm="12" md="9">
+        <h3>{{ dataset.title }}</h3>
       </b-col>
       <b-col>
-        <div class="data-list-item__button">
-          <b-button class="data-list-item__button_size
-          data-list-item__button_color">
-            Visualize
-          </b-button>
+        <div class="data-list-item__btn d-flex justify-content-end" md="2">
+          <b-button>Visualize</b-button>
         </div>
       </b-col>
-    </b-row>
-    <b-row>
-      <b-col class="data-list-item__text-content">{{ dataset.body }}</b-col>
-      <b-col>
+      <div class="w-100"></div>
+      <b-col class="data-list-item__content p-1" sm="12" md="6">
+        <div>{{ dataset.body }}</div>
+      </b-col>
+      <b-col sm md="5">
         <div class="data-list-item__img">
-          <b-img right src="https://picsum.photos/700/160/?grayscale" fluid alt="Responsive image"></b-img>
+          <b-img src="https://picsum.photos/400/200/?grayscale" fluid alt="Responsive image"></b-img>
         </div>
       </b-col>
     </b-row>
-  </b-container>
+  </section>
 </template>
 
 <script>
@@ -33,5 +31,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../assets/style/sass/DataListItem.sass'
+  .data-list-item
+    background-color: #C4C4C4
 </style>

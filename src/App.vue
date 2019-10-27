@@ -1,21 +1,25 @@
 <template>
   <div id="app">
-    <div class="header-wrapper">
-      <header class="header">
+    <b-container>
+      <header class="header rounded text-center p-4 mt-2">
         <span class="header__text">GEMATRIX</span>
       </header>
-    </div>
-    <div class="main">
-      <div class="main__left-part">
-        <TheSearch />
-        <TheLoader v-if="loading" />
-        <DataList v-else :datasets="datasets" />
-      </div>
-      <div class="main__right-part">
-        <ButtonAddDataset  class="main__add-data-btn" />
-        <aside class="main__aside"></aside>
-      </div>
-    </div>
+      <section class="main py-2">
+        <b-row class="no-gutters align-items-center justify-content-between">
+          <b-col sm="12" md="8" class="pb-2"><TheSearch /></b-col>
+          <b-col md="3" class="pb-2"><ButtonAddDataset/></b-col>
+        </b-row>
+        <b-row class="no-gutters justify-content-between">
+          <b-col sm="12" md="8">
+            <TheLoader v-if="loading" />
+            <DataList v-else :datasets="datasets" />
+          </b-col>
+          <b-col md="3">
+            <aside class="aside w-100 h-75 bg-light rounded"></aside>
+          </b-col>
+        </b-row>
+      </section>
+    </b-container>
   </div>
 </template>
 
@@ -69,5 +73,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import 'assets/style/sass/style.sass'
+  .header
+    background-color: #C4C4C4
 </style>
