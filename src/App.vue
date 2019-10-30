@@ -36,11 +36,14 @@ export default {
       requestPath: '',
       datasets: [],
       loading: true,
+      getRequestConfig: {
+        method: 'GET',
+      },
     };
   },
   mounted() {
     this.$_setRequestPath('https://jsonplaceholder.typicode.com/posts?_limit=5');
-    this.$_getDataFrom(this.requestPath).then((result) => {
+    this.$_getDataFrom(this.requestPath, this.getRequestConfig).then((result) => {
       this.$_fillTheArrayWith(result);
       this.loading = false;
     });
@@ -61,11 +64,12 @@ export default {
     /**
     * Method sends a GET-request.
     * @param {string} requestPath - the path to...
+    * @param {object} getRequestConfig - get-request params scope.
     * @return {array} - array of objects.
     */
-    async $_getDataFrom(requestPath) {
+    async $_getDataFrom(requestPath, getRequestConfig) {
       try {
-        const result = await fetch(requestPath);
+        const result = await fetch(requestPath, getRequestConfig);
         return await result.json();
       } catch (err) {
         throw new Error(err);
