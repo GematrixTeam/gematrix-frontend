@@ -33,12 +33,13 @@ export default {
   name: 'app',
   data() {
     return {
+      path: 'https://jsonplaceholder.typicode.com/posts?_limit=5',
       datasets: [],
       loading: true,
     };
   },
   mounted() {
-    this.$_getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5').then((result) => {
+    this.$_getDataFrom(this.path).then((result) => {
       this.$_fillTheArrayWith(result);
       this.loading = false;
     });
@@ -60,53 +61,54 @@ export default {
         throw new Error(err);
       }
     },
+
     /**
     * Method fills the array with data.
     * @param {array} data
     */
     $_fillTheArrayWith(data) {
-      if (this.$_isValidFormat(data)) {
-        this.datasets = [...data];
-      }
+      // if (this.$_isValidFormat(data)) {
+      this.datasets = [...data];
+      // }
     },
 
-    /**
-    * Method checks if the data format is valid (array of not empty objects).
-    * @param {*} data
-    * @return {boolean} - true - if is valid, otherwise - false.
-    */
-    $_isValidFormat(data) {
-      if (this.$_isArray(data)) {
-        if (this.$_areArrayElemsNotEmptyObjects(data)) {
-          return true;
-        }
-      }
-      return false;
-    },
+    // /**
+    // * Method checks if the data format is valid (array of not empty objects).
+    // * @param {*} data
+    // * @return {boolean} - true - if is valid, otherwise - false.
+    // */
+    // $_isValidFormat(data) {
+    //   if (this.$_isArray(data)) {
+    //     if (this.$_areArrayElemsNotEmptyObjects(data)) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // },
 
-    /**
-    * Method checks if the data is array.
-    * @param {*} data
-    * @return {boolean} - true - if it is, otherwise - false.
-    */
-    $_isArray(data) {
-      return Array.isArray(data);
-    },
+    // /**
+    // * Method checks if the data is array.
+    // * @param {*} data
+    // * @return {boolean} - true - if it is, otherwise - false.
+    // */
+    // $_isArray(data) {
+    //   return Array.isArray(data);
+    // },
 
-    /**
-    * Method checks are the array elements not empty objects.
-    * @param {array} arr
-    * @return {boolean} - true - if they are, otherwise - false.
-    */
-    $_areArrayElemsNotEmptyObjects(arr) {
-      if (arr.every((elem) => {
-        const check = Object.values(elem);
-        return check.length;
-      })) {
-        return true;
-      }
-      return false;
-    },
+    // /**
+    // * Method checks are the array elements not empty objects.
+    // * @param {array} arr
+    // * @return {boolean} - true - if they are, otherwise - false.
+    // */
+    // $_areArrayElemsNotEmptyObjects(arr) {
+    //   if (arr.every((elem) => {
+    //     const check = Object.values(elem);
+    //     return check.length;
+    //   })) {
+    //     return true;
+    //   }
+    //   return false;
+    // },
   },
 };
 </script>
