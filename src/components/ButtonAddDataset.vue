@@ -3,13 +3,14 @@
     <b-button v-b-modal.modal-uploadPage size="lg">Add dataset</b-button>
 
     <b-modal
+     ref="my-modal"
      id="modal-uploadPage"
      size="lg"
      centered
      scrollable
      title="Add new dataset"
      hide-footer>
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form ref="my-form" @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group id="input-group-1" label="Title:" label-for="input-1">
           <b-form-input
             id="input-1"
@@ -45,7 +46,7 @@
           </b-form-textarea>
         </b-form-group>
 
-        <b-button type="submit" class="mr-3" variant="primary">Submit</b-button>
+        <b-button type="submit" class="mr-3" variant="primary" @click="hideModal">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
     </b-modal>
@@ -68,9 +69,12 @@ export default {
     };
   },
   methods: {
+    hideModal() {
+      this.$refs['my-modal'].hide();
+    },
     onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      console.log(JSON.stringify(this.form));
     },
     onReset(evt) {
       evt.preventDefault();
