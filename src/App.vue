@@ -33,13 +33,14 @@ export default {
   name: 'app',
   data() {
     return {
-      path: 'https://jsonplaceholder.typicode.com/posts?_limit=5',
+      requestPath: '',
       datasets: [],
       loading: true,
     };
   },
   mounted() {
-    this.$_getDataFrom(this.path).then((result) => {
+    this.$_setRequestPath('https://jsonplaceholder.typicode.com/posts?_limit=5');
+    this.$_getDataFrom(this.requestPath).then((result) => {
       this.$_fillTheArrayWith(result);
       this.loading = false;
     });
@@ -48,14 +49,23 @@ export default {
     TheSearch, DataList, TheLoader, ButtonAddDataset,
   },
   methods: {
+
     /**
-    * Method sends a get- request.
-    * @param {string} path - the path to...
+    * Method sets the GET-request path.
+    * @param {string} requestPath - the path to...
+    */
+    $_setRequestPath(requestPath) {
+      this.requestPath = requestPath;
+    },
+
+    /**
+    * Method sends a GET-request.
+    * @param {string} requestPath - the path to...
     * @return {array} - array of objects.
     */
-    async $_getDataFrom(path) {
+    async $_getDataFrom(requestPath) {
       try {
-        const result = await fetch(path);
+        const result = await fetch(requestPath);
         return await result.json();
       } catch (err) {
         throw new Error(err);
