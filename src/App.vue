@@ -65,7 +65,7 @@ export default {
     * Method sends a GET-request.
     * @param {string} requestPath - the path to...
     * @param {object} getRequestConfig - get-request params scope.
-    * @return {array} - array of objects.
+    * @return {array} - array of data.
     */
     async $_getDataFrom(requestPath, getRequestConfig) {
       try {
