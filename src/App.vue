@@ -12,6 +12,7 @@
         <b-row class="no-gutters justify-content-between">
           <b-col sm="12" md="8">
             <TheLoader v-if="loading" />
+            <DataList v-else-if="error" :error="error" />
             <DataList v-else :datasets="datasets" />
           </b-col>
           <b-col md="3">
@@ -39,6 +40,7 @@ export default {
       getRequestConfig: {
         method: 'GET',
       },
+      error: '',
     };
   },
   mounted() {
@@ -56,6 +58,7 @@ export default {
     /**
     * Method sets the GET-request path.
     * @param {string} requestPath - the path to...
+    * @returns {void}
     */
     $_setRequestPath(requestPath) {
       this.requestPath = requestPath;
@@ -64,21 +67,24 @@ export default {
     /**
     * Method sends a GET-request.
     * @param {string} requestPath - the path to...
-    * @param {object} getRequestConfig - get-request params scope.
-    * @return {array} - array of data.
+    * @param {Object} getRequestConfig - get-request params scope.
+    * @returns {(Array|null)} - array of data or null - if in catch.
     */
     async $_getDataFrom(requestPath, getRequestConfig) {
       try {
         const result = await fetch(requestPath, getRequestConfig);
         return await result.json();
       } catch (err) {
-        throw new Error(err);
+        this.loading = false;
+        this.error = `${err.name}: ${err.message}`;
+        return null;
       }
     },
 
     /**
     * Method fills the array with data.
-    * @param {array} data
+    * @param {Array} data
+    * @returns {void}
     */
     $_fillTheArrayWith(data) {
       this.datasets = [...data];
