@@ -74,6 +74,12 @@ export default {
     };
   },
   methods: {
+    /**
+    * Method sends a post- request.
+    * @param {string} path - the path to...
+    * @return {object} - data object.
+    * @return {string} - error messege if catch some error.
+    */
     async postData(path = '',
       data = {
         method: 'POST',
