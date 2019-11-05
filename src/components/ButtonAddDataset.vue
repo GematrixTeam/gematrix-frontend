@@ -78,7 +78,7 @@ export default {
     * Method sends a post- request.
     * @param {string} path - the path to...
     * @return {object} - data object.
-    * @return {string} - error messege if catch some error.
+    * @return {object} - error messege if catch some error.
     */
     async $_postData(path = '',
       data = {
@@ -95,8 +95,8 @@ export default {
       }) {
       try {
         return await fetch(path, data);
-      } catch (err) {
-        return `ERROR ${err}`;
+      } catch (e) {
+        return { name: e.name, messege: e.messege };
       }
     },
     hideModal() {
@@ -120,6 +120,11 @@ export default {
         .then(json => console.log(json));
 
       console.log(JSON.stringify(this.form));
+
+      this.form.title = '';
+      this.form.source = '';
+      this.form.tags = '';
+      this.form.data = '';
     },
     onReset(evt) {
       evt.preventDefault();
