@@ -10,7 +10,12 @@
      scrollable
      title="Add new dataset"
      hide-footer>
-      <b-form ref="my-form" @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form ref="my-form"
+      @submit="onSubmit"
+      @reset="onReset"
+      action="https://jsonplaceholder.typicode.com/posts"
+      method="post"
+      v-if="show">
         <b-form-group id="input-group-1" label="Title:" label-for="input-1">
           <b-form-input
             id="input-1"
@@ -69,11 +74,45 @@ export default {
     };
   },
   methods: {
+    async postData(path = '',
+      data = {
+        method: 'POST',
+        body: JSON.stringify({
+          title: '',
+          source: '',
+          tags: '',
+          data: '',
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }) {
+      try {
+        return await fetch(path, data);
+      } catch (err) {
+        return `ERROR ${err}`;
+      }
+    },
     hideModal() {
       this.$refs['my-modal'].hide();
     },
     onSubmit(evt) {
       evt.preventDefault();
+
+      this.postData('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: this.form.title,
+          source: this.form.source,
+          tags: this.form.tags,
+          data: this.form.data,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then(response => response.json())
+        .then(json => console.log(json));
+
       console.log(JSON.stringify(this.form));
     },
     onReset(evt) {
