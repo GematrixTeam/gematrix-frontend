@@ -80,7 +80,7 @@ export default {
     * @return {object} - data object.
     * @return {string} - error messege if catch some error.
     */
-    async postData(path = '',
+    async $_postData(path = '',
       data = {
         method: 'POST',
         body: JSON.stringify({
@@ -105,7 +105,7 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
 
-      this.postData('https://jsonplaceholder.typicode.com/posts', {
+      this.$_postData('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
           title: this.form.title,
