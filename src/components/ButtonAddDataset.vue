@@ -79,7 +79,7 @@ export default {
     /**
     * Method sends a post- request.
     * @param {string} path - the path to...
-    * @return {object} - data object if works or error messege if catch some error.
+    * @returns {(object|null)} - data object if works or null -  if catch some error.
     */
     async $_postData(path = '',
       data = {
@@ -99,7 +99,7 @@ export default {
       } catch (e) {
         this.show = false;
         this.error = `${e.name}: ${e.message}`;
-        return { name: e.name, messege: e.messege };
+        return null;
       }
     },
     hideModal() {
