@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
 import App from '@/App.vue';
 
-const wrapper = shallowMount(App); 
+const wrapper = shallowMount(App);
 
 describe('we have the Get-request path', () => {
   it('is there the path', () => {
