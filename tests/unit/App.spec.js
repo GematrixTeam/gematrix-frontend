@@ -1,8 +1,15 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
+import { BContainer, BRow, BCol } from 'bootstrap-vue';
 import App from '@/App.vue';
 
-const wrapper = shallowMount(App);
+const wrapper = shallowMount(App, {
+  stubs: {
+    'b-container': BContainer,
+    'b-col': BCol,
+    'b-row': BRow,
+  }
+});
 
 describe('we have the Get-request path', () => {
   it('is there the path', () => {
