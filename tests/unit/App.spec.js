@@ -16,7 +16,7 @@ describe('we have the Get-request path', () => {
 });
 
 describe('$_getDataFrom(...) works', () => {
-  it('we have got a valid response', done => {
+  it('we have got a valid response', (done) => {
     return wrapper.vm.$nextTick(() => {
       wrapper.vm.$_getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5', {method: 'GET'}).then((res) => {
         expect(res).to.have.lengthOf(5);
