@@ -6,15 +6,16 @@ const wrapper = shallowMount(App);
 
 describe('we have the Get-request path', () => {
   it('is there the path', () => {
-    expect(wrapper.vm.requestPath).to.not.be.empty;
+    const path = 'this is the right path';
+    wrapper.vm.$_setRequestPath(path);
+    expect(wrapper.vm.requestPath === path).to.be.true;
   });
-
   it('the path is string', () => {
-    expect(typeof (wrapper.vm.requestPath) === 'string').to.be.true;
+    expect(wrapper.vm.requestPath).to.be.a('string');
   });
 });
 
-describe('$_getDataFrom() works correctly', () => {
+describe('$_getDataFrom(...) works', () => {
   it('we have got a valid response', done => {
     return wrapper.vm.$nextTick(() => {
       wrapper.vm.$_getDataFrom('https://jsonplaceholder.typicode.com/posts?_limit=5', {method: 'GET'}).then((res) => {
@@ -22,5 +23,14 @@ describe('$_getDataFrom() works correctly', () => {
         done();
       }).catch(done);
     });
+  });
+});
+
+describe('$_fillTheArrayWith(...) works', () => {
+  it('method should fill datasets property', () => {
+    const arr = [1, 'a', '#', true, {}, []];
+    wrapper.vm.$_fillTheArrayWith(arr);
+    expect(wrapper.vm.datasets).to.have.lengthOf(arr.length);
+    expect(wrapper.vm.datasets).to.include(...arr);
   });
 });
