@@ -11,16 +11,16 @@ const wrapper = shallowMount(App, {
   },
 });
 
-// describe('we have the Get-request path', () => {
-//   it('is there the path', () => {
-//     const path = 'this is the right path';
-//     wrapper.vm.$_setRequestPath(path);
-//     expect(wrapper.vm.requestPath === path).to.be.true;
-//   });
-//   it('the path is string', () => {
-//     expect(wrapper.vm.requestPath).to.be.a('string');
-//   });
-// });
+describe('we have the Get-request path', () => {
+  it('is there the path', () => {
+    const path = 'this is the right path';
+    wrapper.vm.$_setRequestPath(path);
+    expect(wrapper.vm.requestPath === path).to.be.true;
+  });
+  it('the path is string', () => {
+    expect(wrapper.vm.requestPath).to.be.a('string');
+  });
+});
 
 describe('$_getDataFrom(...) works', () => {
   it('we have got a valid response', (done) => {
@@ -32,11 +32,11 @@ describe('$_getDataFrom(...) works', () => {
   });
 });
 
-// describe('$_fillTheArrayWith(...) works', () => {
-//   it('method should fill datasets property', () => {
-//     const arr = [1, 'a', '#', true, {}, []];
-//     wrapper.vm.$_fillTheArrayWith(arr);
-//     expect(wrapper.vm.datasets).to.have.lengthOf(arr.length);
-//     expect(wrapper.vm.datasets).to.include(...arr);
-//   });
-// });
+describe('$_fillTheArrayWith(...) works', () => {
+  it('method should fill datasets property', () => {
+    const arr = [1, 'a', '#', true, {}, []];
+    wrapper.vm.$_fillTheArrayWith(arr);
+    expect(wrapper.vm.datasets).to.have.lengthOf(arr.length);
+    expect(wrapper.vm.datasets).to.include(...arr);
+  });
+});
