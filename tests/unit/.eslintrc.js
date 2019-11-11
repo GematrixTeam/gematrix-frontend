@@ -6,9 +6,9 @@ module.exports = {
     files: ['*spec.js'],
     rules: {
       "no-unused-expressions": [{
-        allowShortCircuit: false,
-        allowTernary: false,
-        allowTaggedTemplates: false,
+        allowShortCircuit: 0,
+        allowTernary: 0,
+        allowTaggedTemplates: 0,
       }],
     },
   }],
