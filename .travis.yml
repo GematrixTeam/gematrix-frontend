@@ -6,7 +6,7 @@ jobs:
   - stage: Lint
     script: npm run lint
   - stage: Build
-    script: npm run build
+    script: npm run build && npm run test:unit
   - stage: Dockerize and publish
     if: branch = master AND type = push AND fork = false
     script: npm run build && npm run docker_build && npm run docker_tag && npm run docker_login && npm run docker_push
