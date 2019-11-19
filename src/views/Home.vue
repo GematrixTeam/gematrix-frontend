@@ -1,11 +1,21 @@
 <template>
-  <div id="app">
-    <b-container>
-      <header class="header rounded text-center p-4 mt-2">
-        <span class="header__text">GEMATRIX</span>
-      </header>
-      <router-view />
-    </b-container>
+  <div>
+    <section class="main py-2">
+      <b-row class="no-gutters align-items-center justify-content-between">
+        <b-col sm="12" md="8" class="pb-2"><TheSearch /></b-col>
+        <b-col md="3" class="pb-2"><ButtonAddDataset/></b-col>
+      </b-row>
+      <b-row class="no-gutters justify-content-between">
+        <b-col sm="12" md="8">
+          <TheLoader v-if="loading" />
+          <DataList v-else-if="error" :error="error" />
+          <DataList v-else :datasets="datasets" />
+        </b-col>
+        <b-col md="3">
+          <aside class="aside w-100 h-75 bg-light rounded"></aside>
+        </b-col>
+      </b-row>
+    </section>
   </div>
 </template>
 

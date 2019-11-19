@@ -6,7 +6,7 @@
       </b-col>
       <b-col>
         <div class="data-list-item__btn d-flex justify-content-end" md="2">
-          <b-button>Visualize</b-button>
+          <b-button href="/visualize">Visualize</b-button>
         </div>
       </b-col>
       <div class="w-100"></div>
@@ -23,9 +23,14 @@
 </template>
 
 <script>
+import ViewConstructor from '@/components/ViewConstructor.vue';
+
 export default {
   props: {
     dataset: Object,
+  },
+  components: {
+    ViewConstructor,
   },
 };
 </script>
