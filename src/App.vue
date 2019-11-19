@@ -10,70 +10,10 @@
 </template>
 
 <script>
-import TheSearch from '@/components/TheSearch.vue';
-import DataList from '@/components/DataList.vue';
-import TheLoader from '@/components/TheLoader.vue';
-import ButtonAddDataset from '@/components/ButtonAddDataset.vue';
-
 export default {
   name: 'app',
   data() {
-    return {
-      requestPath: '',
-      datasets: [],
-      loading: true,
-      getRequestConfig: {
-        method: 'GET',
-      },
-      error: '',
-    };
-  },
-  mounted() {
-    this.$_setRequestPath('https://jsonplaceholder.typicode.com/posts?_limit=5');
-    this.$_getDataFrom(this.requestPath, this.getRequestConfig).then((result) => {
-      this.$_fillTheArrayWith(result);
-      this.loading = false;
-    });
-  },
-  components: {
-    TheSearch, DataList, TheLoader, ButtonAddDataset,
-  },
-  methods: {
-
-    /**
-    * Method sets the GET-request path.
-    * @param {string} requestPath - the path to...
-    * @returns {void}
-    */
-    $_setRequestPath(requestPath) {
-      this.requestPath = requestPath;
-    },
-
-    /**
-    * Method sends a GET-request.
-    * @param {string} requestPath - the path to...
-    * @param {Object} getRequestConfig - get-request params scope.
-    * @returns {(Array|null)} - array of data or null - if in catch.
-    */
-    async $_getDataFrom(requestPath, getRequestConfig) {
-      try {
-        const result = await fetch(requestPath, getRequestConfig);
-        return await result.json();
-      } catch (err) {
-        this.loading = false;
-        this.error = `${err.name}: ${err.message}`;
-        return null;
-      }
-    },
-
-    /**
-    * Method fills the array with data.
-    * @param {Array} data
-    * @returns {void}
-    */
-    $_fillTheArrayWith(data) {
-      this.datasets = [...data];
-    },
+    return {};
   },
 };
 </script>

@@ -23,14 +23,10 @@
 </template>
 
 <script>
-import ViewConstructor from '@/components/ViewConstructor.vue';
 
 export default {
   props: {
     dataset: Object,
-  },
-  components: {
-    ViewConstructor,
   },
 };
 </script>
