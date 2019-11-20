@@ -15,5 +15,9 @@ export default new VueRouter({
       path: '/visualize',
       component: () => import('./components/ViewConstructor.vue'),
     },
+    {
+      path: '/create',
+      component: () => import('./components/Preview.vue'),
+    },
   ],
 });
