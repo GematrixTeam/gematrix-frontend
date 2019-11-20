@@ -5,7 +5,8 @@
       <b-card-body>
         <b-card-img src="https://picsum.photos/600/300/?grayscale" fluid alt="Responsive image"></b-card-img>
         <b-card-text class="mt-3">
-          <strong>Title</strong> Some quick example text to build on the card title and make up the bulk of the card's content.
+          <strong>Title</strong> Some quick example text to build on the card title
+and make up the bulk of the card's content.
         </b-card-text>
         <b-button href="/">Create</b-button>
       </b-card-body>
