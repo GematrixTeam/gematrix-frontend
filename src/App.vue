@@ -12,12 +12,13 @@
 </template>
 
 <script>
-import LineExample from './components/LineChart.js'
+import LineExample from './components/LineChart.js';
+
 export default {
   components: {
     LineExample,
-  }
-}
+  },
+};
 </script>
 
 <style>
