@@ -1,29 +1,24 @@
 <template>
   <div id="app">
-    <div class="container">
-      <div class="Chart__list">
-        <div class="Chart">
-          <h2>Linechart</h2>
-          <LineExample />
-        </div>
-      </div>
-    </div>
+    <b-container>
+      <header class="header rounded text-center p-4 mt-2">
+        <span class="header__text">GEMATRIX</span>
+      </header>
+      <router-view />
+    </b-container>
   </div>
 </template>
 
 <script>
-import LineExample from './components/LineChart.js';
-
 export default {
-  components: {
-    LineExample,
+  name: 'app',
+  data() {
+    return {};
   },
 };
 </script>
 
-<style>
-.container {
-  max-width: 800px;
-  margin:  0 auto;
-}
+<style lang="sass" scoped>
+  .header
+    background-color: #C4C4C4
 </style>

@@ -10,6 +10,7 @@
         <b-card-body>
           <b-card-img src="https://picsum.photos/600/300/?grayscale" fluid alt="Responsive image"></b-card-img>
           <b-card-text/>
+          <b-button href="/ran" class="mr-2">Randomize</b-button>
           <b-button href="/" class="mr-2">Facebook</b-button>
           <b-button href="/" class="mr-2">Twitter</b-button>
           <b-button href="/">Embed Code</b-button>

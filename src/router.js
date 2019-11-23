@@ -19,5 +19,9 @@ export default new VueRouter({
       path: '/create',
       component: () => import('./components/Preview.vue'),
     },
+    {
+      path: '/ran',
+      component: () => import('./components/RandomChart.vue'),
+    },
   ],
 });
