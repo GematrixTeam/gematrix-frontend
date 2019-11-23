@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import LineChart from './LineChart2.js';
+import LineChart from './LineChart.vue';
 
 export default {
   components: {
