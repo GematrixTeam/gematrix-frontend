@@ -24,16 +24,15 @@ export default {
   methods: {
     fillData() {
       this.datacollection = {
-        labels: [this.getRandomInt(), this.getRandomInt()],
+        labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+          this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
             label: 'Data One',
             backgroundColor: 'red',
-            data: [this.getRandomInt(), this.getRandomInt()],
-          }, {
-            label: 'Data Two',
-            backgroundColor: 'blue',
-            data: [this.getRandomInt(), this.getRandomInt()],
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+              this.getRandomInt(), this.getRandomInt()],
+            fill: false,
           },
         ],
       };
