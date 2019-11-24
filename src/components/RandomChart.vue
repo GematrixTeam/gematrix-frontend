@@ -28,11 +28,11 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: '#f87979',
+            backgroundColor: 'red',
             data: [this.getRandomInt(), this.getRandomInt()],
           }, {
-            label: 'Data One',
-            backgroundColor: '#f87979',
+            label: 'Data Two',
+            backgroundColor: 'blue',
             data: [this.getRandomInt(), this.getRandomInt()],
           },
         ],
