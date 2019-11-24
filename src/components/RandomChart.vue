@@ -1,6 +1,9 @@
 <template>
-  <div class="small">
-    <line-chart :chart-data="datacollection"></line-chart>
+  <div>
+    <line-chart :chart-data="datacollection" class="mb-3"></line-chart>
+    <b-button href="/" class="mr-2">Facebook</b-button>
+    <b-button href="/" class="mr-2">Twitter</b-button>
+    <b-button href="/" class="mr-2">Embed Code</b-button>
     <b-button href="/" class="mr-2">Home</b-button>
     <button @click="fillData()">Randomize</button>
   </div>
@@ -16,6 +19,8 @@ export default {
   data() {
     return {
       datacollection: null,
+      labelsX: [1, 2, 3, 4, 5],
+
     };
   },
   mounted() {
@@ -24,15 +29,15 @@ export default {
   methods: {
     fillData() {
       this.datacollection = {
-        labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-          this.getRandomInt(), this.getRandomInt()],
+        labels: this.labelsX,
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: 'red',
+            backgroundColor: '#f87979',
+            borderColor: '#007979',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
               this.getRandomInt(), this.getRandomInt()],
-            fill: false,
+            // fill: false,
           },
         ],
       };

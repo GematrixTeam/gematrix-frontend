@@ -8,12 +8,8 @@
       :key="dataset.id">
         <b-card-title class="text-center">{{ dataset.title }}</b-card-title>
         <b-card-body>
-          <b-card-img src="https://picsum.photos/600/300/?grayscale" fluid alt="Responsive image"></b-card-img>
+          <RandomChart />
           <b-card-text/>
-          <b-button href="/ran" class="mr-2">Randomize</b-button>
-          <b-button href="/" class="mr-2">Facebook</b-button>
-          <b-button href="/" class="mr-2">Twitter</b-button>
-          <b-button href="/">Embed Code</b-button>
         </b-card-body>
       </b-card>
     </div>
@@ -22,6 +18,7 @@
 
 <script>
 import TheLoader from '@/components/TheLoader.vue';
+import RandomChart from '@/components/RandomChart.vue';
 
 export default {
   data() {
@@ -37,7 +34,7 @@ export default {
     });
   },
   components: {
-    TheLoader,
+    TheLoader, RandomChart,
   },
   methods: {
     async $_getDataFrom(path) {

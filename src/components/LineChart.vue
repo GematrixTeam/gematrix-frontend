@@ -5,8 +5,16 @@ const { reactiveProp } = mixins;
 
 export default {
   extends: Line,
+  data: () => ({
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  }),
   mixins: [reactiveProp],
-  props: ['options'],
+  props: {
+    options: Object,
+  },
   mounted() {
     // this.chartData создаётся внутри миксина.
     // Если вы хотите передать опции, создайте локальный объект options
