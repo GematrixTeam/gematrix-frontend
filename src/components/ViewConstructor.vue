@@ -1,26 +1,26 @@
 <template>
-  <div class="main__add-data-btn d-flex justify-content-center">
+  <div class="">
     <TheLoader v-if="loading" />
     <div v-else>
-      <b-card no-body class="overflow-hidden mt-5 lg"
-      v-for="dataset of datasets"
+      <div v-for="dataset of datasets"
       :dataset="dataset"
-      :key="dataset.id">
-        <b-card-title class="text-center">Construct the view</b-card-title>
-        <b-card-body>
-          <b-card-img src="https://picsum.photos/600/300/?grayscale" fluid alt="Responsive image"></b-card-img>
-          <b-card-text class="mt-3">
-            <strong>Title</strong> {{ dataset.title }}
-          </b-card-text>
-          <b-button href="/create">Create</b-button>
-        </b-card-body>
-      </b-card>
+      :key="dataset.id" class="m-100">
+        <h3 class="text-center my-3">Construct the view</h3>
+        <div class="w-75 mx-auto">
+          <RandomChart class="mb-3" />
+          <strong>Title</strong> {{ dataset.title }}
+          <div class="text-right">
+            <b-button href="/create" class="mt-3" >Create</b-button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import TheLoader from '@/components/TheLoader.vue';
+import RandomChart from '@/components/RandomChart.vue';
 
 export default {
   data() {
@@ -36,7 +36,7 @@ export default {
     });
   },
   components: {
-    TheLoader,
+    TheLoader, RandomChart,
   },
   methods: {
     async $_getDataFrom(path) {

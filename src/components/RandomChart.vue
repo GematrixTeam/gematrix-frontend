@@ -1,10 +1,10 @@
 <template>
   <div>
     <line-chart :chart-data="datacollection" class="mb-3"></line-chart>
-    <b-button href="/" class="mr-2">Facebook</b-button>
+    <!-- b-button href="/" class="mr-2">Facebook</b-button>
     <b-button href="/" class="mr-2">Twitter</b-button>
     <b-button href="/" class="mr-2">Embed Code</b-button>
-    <b-button href="/" class="mr-2">Home</b-button>
+    <b-button href="/" class="mr-2">Home</b-button -->
     <button @click="fillData()">Randomize</button>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       datacollection: null,
-      labelsX: [1, 2, 3, 4, 5],
+      labelsX: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 
     };
   },
@@ -33,10 +33,12 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: '#f87979',
-            borderColor: '#007979',
+            backgroundColor: '#cecece',
+            borderColor: '#555555',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-              this.getRandomInt(), this.getRandomInt()],
+              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), 
+              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), 
+              this.getRandomInt()],
             // fill: false,
           },
         ],
@@ -49,9 +51,9 @@ export default {
 };
 </script>
 
-<style>
+<!-- style>
   .small {
-    max-width: 600px;
+    max-width: 1000px;
     margin:  150px auto;
   }
-</style>
+</style -->

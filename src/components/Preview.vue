@@ -2,16 +2,23 @@
   <div class="main__add-data-btn d-flex justify-content-center">
     <TheLoader v-if="loading" />
     <div v-else>
-      <b-card no-body class="overflow-hidden p-3 mt-5 lg"
-      v-for="dataset of datasets"
+      <div v-for="dataset of datasets"
       :dataset="dataset"
       :key="dataset.id">
-        <b-card-title class="text-center">{{ dataset.title }}</b-card-title>
-        <b-card-body>
-          <RandomChart />
-          <b-card-text/>
-        </b-card-body>
-      </b-card>
+        <h3 class="text-center my-3">{{ dataset.title }}</h3>
+        <b-form-textarea
+          id="textarea"
+          v-model="text"
+          placeholder="Code to insert..."
+          rows="15"
+          max-rows="6"
+        ></b-form-textarea>
+        <div class="my-3 text-center">
+          <b-button href="/" class="mr-2">Facebook</b-button>
+          <b-button href="/" class="mr-2">Twitter</b-button>
+          <b-button href="/" class="mr-2">Embed Code</b-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +31,7 @@ export default {
   data() {
     return {
       datasets: [],
+      text: '',
       loading: true,
     };
   },
