@@ -6,7 +6,7 @@
       </b-col>
       <b-col>
         <div class="data-list-item__btn d-flex justify-content-end" md="2">
-          <b-button>Visualize</b-button>
+          <b-button href="/visualize">Visualize</b-button>
         </div>
       </b-col>
       <div class="w-100"></div>
@@ -15,7 +15,8 @@
       </b-col>
       <b-col sm md="5">
         <div class="data-list-item__img">
-          <b-img src="https://picsum.photos/400/200/?grayscale" fluid alt="Responsive image"></b-img>
+          <!-- b-img src="https://picsum.photos/400/200/?grayscale" fluid alt="Responsive image"></b-img -->
+          <RandomChart />
         </div>
       </b-col>
     </b-row>
@@ -23,9 +24,14 @@
 </template>
 
 <script>
+import RandomChart from '@/components/RandomChart.vue';
+
 export default {
   props: {
     dataset: Object,
+  },
+  components: {
+    RandomChart,
   },
 };
 </script>
