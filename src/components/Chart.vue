@@ -13,7 +13,7 @@ export default {
       default: null,
     },
   },
-  mounted () {
+  mounted() {
     this.renderChart(this.chartdata, this.options);
   },
 };

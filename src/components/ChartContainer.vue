@@ -17,7 +17,7 @@ export default {
     loaded: false,
     chartdata: null,
   }),
-  async mounted () {
+  async mounted() {
     this.loaded = false;
     try {
       const { userlist } = await fetch('/api/userlist');
