@@ -25,7 +25,6 @@
 
 <script>
 import TheLoader from '@/components/TheLoader.vue';
-import RandomChart from '@/components/RandomChart.vue';
 
 export default {
   data() {
@@ -42,7 +41,7 @@ export default {
     });
   },
   components: {
-    TheLoader, RandomChart,
+    TheLoader,
   },
   methods: {
     async $_getDataFrom(path) {
