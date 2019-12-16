@@ -10,7 +10,7 @@
           <RandomChart class="mb-3" />
           <strong>Title</strong> {{ dataset.title }}
           <div class="text-right">
-            <b-button href="/create" class="mt-3" >Create</b-button>
+            <b-button href="/create" class="mt-3 mb-3" >Create</b-button>
           </div>
         </div>
       </div>
