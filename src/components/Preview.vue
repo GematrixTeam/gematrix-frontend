@@ -12,6 +12,8 @@
           placeholder="Code to insert..."
           rows="15"
           max-rows="6"
+          value='<a class="embedly-card" data-card-controls="0" href="http://gematrix-dev.hntr.info/visualize">gematrix</a>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>'
         ></b-form-textarea>
         <div class="my-3 text-center">
           <b-button href="/" class="mr-2">Facebook</b-button>
