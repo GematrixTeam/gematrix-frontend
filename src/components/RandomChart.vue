@@ -5,7 +5,7 @@
     <b-button href="/" class="mr-2">Twitter</b-button>
     <b-button href="/" class="mr-2">Embed Code</b-button>
     <b-button href="/" class="mr-2">Home</b-button -->
-    <button @click="fillData()">Randomize</button>
+    <!-- button @click="fillData()">Randomize</button -->
   </div>
 </template>
 
@@ -36,8 +36,8 @@ export default {
             backgroundColor: '#cecece',
             borderColor: '#555555',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), 
-              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), 
+              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+              this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
               this.getRandomInt()],
             // fill: false,
           },
