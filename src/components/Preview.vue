@@ -6,11 +6,11 @@
       :dataset="dataset"
       :key="dataset.id">
         <h3 class="text-center my-3">{{ dataset.title }}</h3>
-        <div class="iframe_border"> {{embed}} </div>
+        <div class="iframe_border"> {{code}} </div>
         <div class="my-3 text-center">
           <b-button href="/" class="mr-2">Facebook</b-button>
           <b-button href="/" class="mr-2">Twitter</b-button>
-          <b-button href="/" class="mr-2">Embed Code</b-button>
+          <b-button class="mr-2" @click="enterCodeEmbed">Embed Code</b-button>
         </div>
       </div>
     </div>
@@ -26,6 +26,7 @@ export default {
       datasets: [],
       text: '',
       loading: true,
+      code: 'Code to insert',
       embed: `<iframe src="http://gematrix-dev.hntr.info/visualize" width="600" height="700">
     Ваш браузер не поддерживает плавающие фреймы!
  </iframe>`,
@@ -52,15 +53,19 @@ export default {
     $_fillTheArrayWith(data) {
       this.datasets = [...data];
     },
+    enterCodeEmbed() {
+      this.code = this.embed;
+    },
   },
 };
 </script>
 
-<style>
-  .iframe_border {
-    border: 1px solid black;
-    padding: 20px 30px;
-    width: 300px;
-    margin: 0 auto;
-  }
+<style lang="sass" scoped>
+
+  .iframe_border
+    border: 1px solid black
+    padding: 20px 30px
+    width: 300px
+    margin: 0 auto
+
 </style>
