@@ -2,7 +2,7 @@
   <div id="app">
     <b-container>
       <header class="header rounded text-center p-4 mt-2">
-        <span class="header__text">GEMATRIX</span>
+        <span class="header__text"><b-link href="/">GEMATRIX</b-link></span>
       </header>
       <router-view />
     </b-container>
