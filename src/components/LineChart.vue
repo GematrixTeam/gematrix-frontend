@@ -13,12 +13,16 @@ export default {
   }),
   mixins: [reactiveProp],
   props: {
-    options: Object,
+    optionsGraph: Object,
+    chartData: {
+    type: Object,
+    default: null,
+  },
   },
   mounted() {
     // this.chartData создаётся внутри миксина.
     // Если вы хотите передать опции, создайте локальный объект options
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, this.optionsGraph);
   },
 };
 </script>

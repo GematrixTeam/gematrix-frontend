@@ -123,6 +123,7 @@ export default {
         .then(json => console.log(json));
 
       console.log(JSON.stringify(this.form));
+      alert(JSON.stringify(this.form));
 
       this.form.title = '';
       this.form.source = '';
