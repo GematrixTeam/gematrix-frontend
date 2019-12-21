@@ -14,7 +14,7 @@
       <b-form ref="my-form"
       @submit="onSubmit"
       @reset="onReset"
-      action="http://gematrix.hntr.info/api/v1/datasets/"
+      action="https://jsonplaceholder.typicode.com/posts"
       method="post"
       v-if="show">
         <b-form-group id="input-group-1" label="Title:" label-for="input-1">
