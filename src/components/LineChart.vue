@@ -15,9 +15,9 @@ export default {
   props: {
     optionsGraph: Object,
     chartData: {
-    type: Object,
-    default: null,
-  },
+      type: Object,
+      default: null,
+    },
   },
   mounted() {
     // this.chartData создаётся внутри миксина.

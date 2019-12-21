@@ -39,7 +39,7 @@ export default {
     };
   },
   mounted() {
-    this.$_setRequestPath('https://jsonplaceholder.typicode.com/posts?_limit=5');
+    this.$_setRequestPath('http://gematrix.hntr.info/api/v1/datasets/d967acc3-edf9-4957-bd14-7e2856a889b9');
     this.$_getDataFrom(this.requestPath, this.getRequestConfig).then((result) => {
       this.$_fillTheArrayWith(result);
       this.loading = false;
